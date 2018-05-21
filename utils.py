@@ -66,6 +66,26 @@ def load_data_fashion_mnist(batch_size, resize=None, root="~/.mxnet/datasets/fas
     test_data = DataLoader(mnist_test, batch_size, shuffle=False, transform=transform_mnist)
     return (train_data, test_data)
 
+def load_data_mnist(batch_size, resize=None, root="~/.mxnet/datasets/mnist"):
+    """download the fashion mnist dataest and then load into memory"""
+    def transform_mnist(data, label):
+        # Transform a batch of examples.
+        if resize:
+            n = data.shape[0]
+            new_data = nd.zeros((n, resize, resize, data.shape[3]))
+            for i in range(n):
+                new_data[i] = image.imresize(data[i], resize, resize)
+            data = new_data
+        # change data from batch x height x width x channel to batch x channel x height x width
+        return nd.transpose(data.astype('float32'), (0,3,1,2))/255, label.astype('float32')
+
+    mnist_train = gluon.data.vision.MNIST(root=root, train=True, transform=None)
+    mnist_test = gluon.data.vision.MNIST(root=root, train=False, transform=None)
+    # Transform later to avoid memory explosion. 
+    train_data = DataLoader(mnist_train, batch_size, shuffle=True, transform=transform_mnist)
+    test_data = DataLoader(mnist_test, batch_size, shuffle=False, transform=transform_mnist)
+    return (train_data, test_data)
+
 def try_gpu():
     """If GPU is available, return mx.gpu(0); else return mx.cpu()"""
     try:
@@ -149,15 +169,15 @@ def train(train_data, test_data, net, loss, trainer, ctx, num_epochs, print_batc
             trainer.step(batch_size)
             n += batch_size
             m += sum([y.size for y in label])
-            if print_batches and (i+1) % print_batches == 0:
-                print("Batch %d. Loss: %f, Train acc %f" % (
-                    n, train_loss/n, train_acc/m
-                ))
+            #if print_batches and (i+1) % print_batches == 0:
+                #print("Batch %d. Loss: %f, Train acc %f" % (
+                #    n, train_loss/n, train_acc/m
+                #))
 
         test_acc = evaluate_accuracy(test_data, net, ctx)
-        #print("Epoch %d. Loss: %.3f, Train acc %.2f, Test acc %.2f, Time %.1f sec" % (
-        #    epoch, train_loss/n, train_acc/m, test_acc, time() - start
-        #))
+        print("Epoch %d. Loss: %.3f, Train acc %.2f, Test acc %.2f, Time %.1f sec" % (
+            epoch, train_loss/n, train_acc/m, test_acc, time() - start
+        ))
 
 class Residual(nn.HybridBlock):
     def __init__(self, channels, same_shape=True, **kwargs):
