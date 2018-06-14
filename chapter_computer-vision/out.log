@@ -1,0 +1,33 @@
+nohup: ignoring input
+[17:51:00] src/operator/nn/./cudnn/./cudnn_algoreg-inl.h:107: Running performance tests to find the best convolution algorithm, this can take a while... (setting env variable MXNET_CUDNN_AUTOTUNE_DEFAULT to 0 to disable)
+[17:51:03] src/operator/nn/./cudnn/./cudnn_algoreg-inl.h:107: Running performance tests to find the best convolution algorithm, this can take a while... (setting env variable MXNET_CUDNN_AUTOTUNE_DEFAULT to 0 to disable)
+Epoch 0. Loss: 0.338, Train acc 0.90, Test acc 0.93, Time 127.3 sec
+Epoch 1. Loss: 0.123, Train acc 0.95, Test acc 0.95, Time 182.2 sec
+Epoch 2. Loss: 0.096, Train acc 0.96, Test acc 0.96, Time 66.5 sec
+Epoch 3. Loss: 0.077, Train acc 0.97, Test acc 0.97, Time 63.6 sec
+Epoch 4. Loss: 0.060, Train acc 0.98, Test acc 0.97, Time 63.5 sec
+Epoch 5. Loss: 0.055, Train acc 0.98, Test acc 0.97, Time 63.8 sec
+Epoch 6. Loss: 0.048, Train acc 0.98, Test acc 0.97, Time 63.8 sec
+Epoch 7. Loss: 0.046, Train acc 0.98, Test acc 0.98, Time 63.5 sec
+Epoch 8. Loss: 0.042, Train acc 0.98, Test acc 0.97, Time 63.6 sec
+Epoch 9. Loss: 0.039, Train acc 0.98, Test acc 0.97, Time 64.0 sec
+Epoch 10. Loss: 0.037, Train acc 0.98, Test acc 0.97, Time 63.7 sec
+Epoch 11. Loss: 0.034, Train acc 0.99, Test acc 0.98, Time 63.9 sec
+Epoch 12. Loss: 0.032, Train acc 0.99, Test acc 0.97, Time 64.4 sec
+Epoch 13. Loss: 0.031, Train acc 0.99, Test acc 0.97, Time 64.2 sec
+Epoch 14. Loss: 0.029, Train acc 0.99, Test acc 0.98, Time 64.1 sec
+Epoch 15. Loss: 0.027, Train acc 0.99, Test acc 0.97, Time 64.6 sec
+Epoch 16. Loss: 0.025, Train acc 0.99, Test acc 0.98, Time 64.4 sec
+Epoch 17. Loss: 0.024, Train acc 0.99, Test acc 0.98, Time 64.2 sec
+Epoch 18. Loss: 0.024, Train acc 0.99, Test acc 0.97, Time 63.6 sec
+Epoch 19. Loss: 0.023, Train acc 0.99, Test acc 0.98, Time 63.4 sec
+Epoch 20. Loss: 0.022, Train acc 0.99, Test acc 0.98, Time 63.5 sec
+Epoch 21. Loss: 0.021, Train acc 0.99, Test acc 0.97, Time 63.5 sec
+Epoch 22. Loss: 0.021, Train acc 0.99, Test acc 0.98, Time 63.6 sec
+Epoch 23. Loss: 0.021, Train acc 0.99, Test acc 0.98, Time 63.6 sec
+Epoch 24. Loss: 0.018, Train acc 0.99, Test acc 0.96, Time 63.6 sec
+Epoch 25. Loss: 0.018, Train acc 0.99, Test acc 0.97, Time 63.7 sec
+Epoch 26. Loss: 0.018, Train acc 0.99, Test acc 0.92, Time 64.0 sec
+Epoch 27. Loss: 0.017, Train acc 0.99, Test acc 0.98, Time 63.7 sec
+Epoch 28. Loss: 0.017, Train acc 0.99, Test acc 0.98, Time 63.7 sec
+Epoch 29. Loss: 0.017, Train acc 0.99, Test acc 0.98, Time 63.7 sec
